@@ -1,4 +1,5 @@
 #include "stm32l476xx.h"
+#include <stdlib.h>
 //These functions inside the asm file
 extern void GPIO_init();
 extern void max7219_init();
@@ -36,20 +37,24 @@ void keypad_init()
 	//Set PB5,6,7,9 as medium speed mode
 	GPIOB->OSPEEDR=GPIOB->OSPEEDR|0x45400;
 }
+typedef struct node {
+	int val;
+	struct node * next;
+} node_t;
 /* TODO: scan keypad value and display
 */
 void keypad_scan()
 {
-	int flag_keypad, flag_debounce, k, position_c, position_r, flag_keypad_r;
+	int flag_debounce, k, position_c, position_r, flag_keypad_r;
 	int Table[4][4] = {{1,2,3,10},{4,5,6,11},{7,8,9,12},{15,0,14,13}};
 	int currentState[16], lastState[16], change[16];
 	int sum = 0;
-	int num_cnt = 0;
 	int cnt = 0;
-	int record[100];
-	for (int i = 0; i < 100; i++){
-		record[i] = 0;
-	}
+    node_t * head = 0;
+    head = malloc(sizeof(node_t));
+	node_t * current = head;
+	head -> val = 0;
+	head -> next = 0;
 	for (int i = 0; i < 16; i++)
 		currentState[i] = lastState[i] = change[i] = 0;
 	while(1){
@@ -69,6 +74,12 @@ void keypad_scan()
 					change[Table[j][i]] = 1;
 				if (flag_keypad_r != 0 && (Table[j][i] == 15)){
 					display(0,0);
+					node_t* cur = head;
+					while(cur->next != 0){
+						node_t* pre = cur;
+						cur = cur->next;
+						free(pre);
+					}
 					return ;
 				}
 			}
@@ -106,17 +117,50 @@ void keypad_scan()
 									display(sum, cnt);
 								}
 							}else if(Table[j][i] >= 10 && Table[j][i] <= 13){
-								if (record[num_cnt-1] > 0){
-									record[num_cnt] = sum;
+								if (current->val > 0){
+									current->next = malloc(sizeof(node_t));
+									current->next->val = sum;
+									current->next->next = 0;
+									current = current->next;
 									sum = cnt = 0;
-									record[num_cnt + 1] = Table[j][i] - 14; //div:-1 mul:-2 sub:-3 add:-4 
+									current->next = malloc(sizeof(node_t));
+									current->next->val = Table[j][i] - 14; //div:-1 mul:-2 sub:-3 add:-4
+									current->next->next = 0;
+									current = current->next;
 									num_cnt += 2;
 									display(0,0);
 								}
-							}else if(Table[j][i] == 14){
-								for (int i = 0; i < num_cnt;i++){
-									
+							}else if(Table[j][i] == 14 && cur->val != ){
+								node_t *cur = head;
+								node_t *pre;
+								while (cur->next != 0) {
+									pre = cur;
+									cur = cur->next;
+									if (cur->val < 0 && cur->val >= -2){
+										if (cur->val == -1)
+											pre->val /= cur->next->val;
+										else
+											pre->val *= cur->next->val;
+										pre->next = cur->next->next;
+										free(cur->next);
+										free(cur);
+									}
 								}
+								cur = head;
+								while (cur->next != 0) {
+									pre = cur;
+									cur = cur->next;
+									if (cur->val < -2){
+										if (cur->val == -3)
+											pre->val -= cur->next->val;
+										else
+											pre->val += cur->next->val;
+										pre->next = cur->next->next;
+										free(cur->next);
+										free(cur);
+									}
+								}
+								display(head->next->val,8);
 							}
 						}
 					}
