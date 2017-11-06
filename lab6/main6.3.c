@@ -44,7 +44,12 @@ void keypad_scan()
 	int Table[4][4] = {{1,2,3,10},{4,5,6,11},{7,8,9,12},{15,0,14,13}};
 	int currentState[16], lastState[16], change[16];
 	int sum = 0;
+	int num_cnt = 0;
 	int cnt = 0;
+	int record[100];
+	for (int i = 0; i < 100; i++){
+		record[i] = 0;
+	}
 	for (int i = 0; i < 16; i++)
 		currentState[i] = lastState[i] = change[i] = 0;
 	while(1){
@@ -62,8 +67,10 @@ void keypad_scan()
 				flag_keypad_r = flag_keypad_r && 1;
 				if (flag_keypad_r != lastState[Table[j][i]])
 					change[Table[j][i]] = 1;
-				if (flag_keypad_r != 0 && (Table[j][i] == 15))
+				if (flag_keypad_r != 0 && (Table[j][i] == 15)){
 					display(0,0);
+					return ;
+				}
 			}
 		}
 		int flag = 0;
@@ -91,8 +98,27 @@ void keypad_scan()
 						if(flag_keypad_r != currentState[Table[j][i]]){
 							currentState[Table[j][i]] = !currentState[Table[j][i]];
 						}
-						if (currentState[Table[j][i]])
-							sum += Table[j][i];
+						if (currentState[Table[j][i]]){
+							if(Table[j][i] >= 0 && Table[j][i] <= 9){
+								cnt++;
+								if (cnt <= 3){
+									sum = sum * 10 + Table[j][i];
+									display(sum, cnt);
+								}
+							}else if(Table[j][i] >= 10 && Table[j][i] <= 13){
+								if (record[num_cnt-1] > 0){
+									record[num_cnt] = sum;
+									sum = cnt = 0;
+									record[num_cnt + 1] = Table[j][i] - 14; //div:-1 mul:-2 sub:-3 add:-4 
+									num_cnt += 2;
+									display(0,0);
+								}
+							}else if(Table[j][i] == 14){
+								for (int i = 0; i < num_cnt;i++){
+									
+								}
+							}
+						}
 					}
 				}
 			}
@@ -110,7 +136,6 @@ void keypad_scan()
 				lastState[Table[j][i]] = flag_keypad_r;
 			}
 		}
-		display(sum, 8);
 	}
 }
 /**
@@ -152,5 +177,6 @@ int main()
 	GPIO_init();
 	max7219_init();
 	keypad_init();
-	keypad_scan();
+	while(1)
+		keypad_scan();
 }
