@@ -37,6 +37,40 @@ void keypad_init()
 	//Set PB5,6,7,9 as medium speed mode
 	GPIOB->OSPEEDR=GPIOB->OSPEEDR|0x45400;
 }
+/**
+* TODO: Show data on 7-seg via max7219_send
+* Input:
+* data: decimal value
+* num_digs: number of digits will show on 7-seg
+* Return:
+* 0: success
+* -1: illegal data range(out of 8 digits range)
+*/
+int display(int data, int num_digs)
+{
+	if (num_digs <= 8 && num_digs >= 0){
+		int i;
+		int div = 10000000;
+		for (i = 8; i > num_digs; i--){
+			MAX7219Send(i, 15);
+			div = div / 10;
+		}
+		if (data < 0){
+			MAX7219Send(num_digs, 10);
+			data = -data;
+			num_digs--;
+			div = div / 10;
+		}
+		for (i = num_digs; i > 0; i--){
+			int num = data / div;
+			MAX7219Send(i, num);
+			data = data % div;
+			div = div / 10;
+		}
+		return 0;
+	}else
+		return -1;
+}
 typedef struct node {
 	int val;
 	struct node * next;
@@ -127,10 +161,9 @@ void keypad_scan()
 									current->next->val = Table[j][i] - 14; //div:-1 mul:-2 sub:-3 add:-4
 									current->next->next = 0;
 									current = current->next;
-									num_cnt += 2;
 									display(0,0);
 								}
-							}else if(Table[j][i] == 14 && cur->val != ){
+							}else if(Table[j][i] == 14 && current->val > 0){
 								node_t *cur = head;
 								node_t *pre;
 								while (cur->next != 0) {
@@ -181,40 +214,6 @@ void keypad_scan()
 			}
 		}
 	}
-}
-/**
-* TODO: Show data on 7-seg via max7219_send
-* Input:
-* data: decimal value
-* num_digs: number of digits will show on 7-seg
-* Return:
-* 0: success
-* -1: illegal data range(out of 8 digits range)
-*/
-int display(int data, int num_digs)
-{
-	if (num_digs <= 8 && num_digs >= 0){
-		int i;
-		int div = 10000000;
-		for (i = 8; i > num_digs; i--){
-			MAX7219Send(i, 15);
-			div = div / 10;
-		}
-		if (data < 0){
-			MAX7219Send(num_digs, 10);
-			data = -data;
-			num_digs--;
-			div = div / 10;
-		}
-		for (i = num_digs; i > 0; i--){
-			int num = data / div;
-			MAX7219Send(i, num);
-			data = data % div;
-			div = div / 10;
-		}
-		return 0;
-	}else
-		return -1;
 }
 int main()
 {
