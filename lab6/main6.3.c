@@ -106,7 +106,7 @@ void keypad_scan()
 				flag_keypad_r = flag_keypad_r && 1;
 				if (flag_keypad_r != lastState[Table[j][i]])
 					change[Table[j][i]] = 1;
-				if (flag_keypad_r != 0 && (Table[j][i] == 15)){
+				if (flag_keypad_r != 0 && (Table[j][i] == 14)){
 					display(0,0);
 					node_t* cur = head;
 					while(cur->next != 0){
@@ -114,17 +114,18 @@ void keypad_scan()
 						cur = cur->next;
 						free(pre);
 					}
+					free(cur);
 					return ;
 				}
 			}
 		}
 		int flag = 0;
 		for (int i = 0; i < 16; i++){
-			if (change[i] && i != 15 && i != 14)
+			if (change[i] && i != 14)
 				flag = 1;
 		}
 		if (flag){
-			k=100;
+			k=10;
 			while(k!=0){
 				flag_debounce = GPIOB->IDR&10111<<5;
 				k--;
@@ -151,19 +152,21 @@ void keypad_scan()
 									display(sum, cnt);
 								}
 							}else if(Table[j][i] >= 10 && Table[j][i] <= 13){
-								if (current->val > 0){
-									current->next = malloc(sizeof(node_t));
-									current->next->val = sum;
-									current->next->next = 0;
-									current = current->next;
-									sum = cnt = 0;
-									current->next = malloc(sizeof(node_t));
-									current->next->val = Table[j][i] - 14; //div:-1 mul:-2 sub:-3 add:-4
-									current->next->next = 0;
-									current = current->next;
-									display(0,0);
-								}
-							}else if(Table[j][i] == 14 && current->val > 0){
+								current->next = malloc(sizeof(node_t));
+								current->next->val = sum;
+								current->next->next = 0;
+								current = current->next;
+								sum = cnt = 0;
+								current->next = malloc(sizeof(node_t));
+								current->next->val = Table[j][i] - 14; //div:-1 mul:-2 sub:-3 add:-4
+								current->next->next = 0;
+								current = current->next;
+								display(0,0);
+							}else if(Table[j][i] == 15 && current->val < 0){
+								current->next = malloc(sizeof(node_t));
+								current->next->val = sum;
+								current->next->next = 0;
+								current = current->next;
 								node_t *cur = head;
 								node_t *pre;
 								while (cur->next != 0) {
@@ -177,6 +180,7 @@ void keypad_scan()
 										pre->next = cur->next->next;
 										free(cur->next);
 										free(cur);
+										cur = pre;
 									}
 								}
 								cur = head;
@@ -191,9 +195,23 @@ void keypad_scan()
 										pre->next = cur->next->next;
 										free(cur->next);
 										free(cur);
+										cur = pre;
 									}
 								}
-								display(head->next->val,8);
+								int tmp = head->next->val;
+								int dig = 0;
+								if (tmp < 0){
+									dig++;
+									tmp = -tmp;
+								}
+								while(tmp != 0){
+									tmp /= 10;
+									dig++;
+								}
+								display(head->next->val,dig);
+								free(head->next);
+								free(head);
+								return ;
 							}
 						}
 					}
@@ -220,6 +238,7 @@ int main()
 	GPIO_init();
 	max7219_init();
 	keypad_init();
+	display(0,0);
 	while(1)
 		keypad_scan();
 }
