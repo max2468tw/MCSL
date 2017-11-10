@@ -1,0 +1,29 @@
+21:20:59 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+Building file: ../src/main2.2.s
+Invoking: MCU GCC Assembler
+C:\Users\Max\Desktop\github\MCSL\Lab1\Debug
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -g -o "src/main2.2.o" "../src/main2.2.s"
+Finished building: ../src/main2.2.s
+ 
+Building file: ../src/main2.3.s
+Invoking: MCU GCC Assembler
+C:\Users\Max\Desktop\github\MCSL\Lab1\Debug
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -g -o "src/main2.3.o" "../src/main2.3.s"
+Finished building: ../src/main2.3.s
+ 
+Building target: Lab1.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\Max\Desktop\github\MCSL\Lab1\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab1.elf" @"objects.list"   -lm
+Finished building target: Lab1.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "Lab1.elf" "Lab1.bin"
+arm-none-eabi-size "Lab1.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1008	   1096	   1092	   3196	    c7c	Lab1.elf
+ 
+
+21:21:00 Build Finished (took 745ms)
+
