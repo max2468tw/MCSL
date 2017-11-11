@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project>
-	<configuration id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.130895154" name="Debug">
+	<configuration id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.259027877" name="Debug">
 		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
 			<provider id="fr.ac6.mcu.ide.build.CrossBuiltinSpecsDetector">
 				<language id="org.eclipse.cdt.core.gcc">
@@ -1047,38 +1047,35 @@
 					</entry>
 				</language>
 				<language id="org.eclipse.cdt.core.g++">
-					<entry kind="includePath" name="C:/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.15.0.201708311556/tools/compiler/arm-none-eabi/include/c++/6.3.1">
-						<flag value="BUILTIN|READONLY"/>
-					</entry>
-					<entry kind="includePath" name="/${ProjName}/#undef __ARM_FP">
-						<flag value="BUILTIN|READONLY|VALUE_WORKSPACE_PATH"/>
-					</entry>
-					<entry kind="includePath" name="C:/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.15.0.201708311556/tools/compiler/arm-none-eabi/include/c++/6.3.1/arm-none-eabi">
-						<flag value="BUILTIN|READONLY"/>
-					</entry>
-					<entry kind="includePath" name="/${ProjName}/#undef __ARM_FEATURE_FMA">
-						<flag value="BUILTIN|READONLY|VALUE_WORKSPACE_PATH"/>
-					</entry>
-					<entry kind="includePath" name="C:/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.15.0.201708311556/tools/compiler/arm-none-eabi/include/c++/6.3.1/backward">
-						<flag value="BUILTIN|READONLY"/>
-					</entry>
-					<entry kind="includePath" name="/${ProjName}/#undef __ARM_NEON__">
-						<flag value="BUILTIN|READONLY|VALUE_WORKSPACE_PATH"/>
-					</entry>
-					<entry kind="includePath" name="C:/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.15.0.201708311556/tools/compiler/lib/gcc/arm-none-eabi/6.3.1/include">
-						<flag value="BUILTIN|READONLY"/>
-					</entry>
 					<entry kind="includePath" name="/${ProjName}/#undef __ARM_NEON">
-						<flag value="BUILTIN|READONLY|VALUE_WORKSPACE_PATH"/>
-					</entry>
-					<entry kind="includePath" name="C:/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.15.0.201708311556/tools/compiler/lib/gcc/arm-none-eabi/6.3.1/include-fixed">
-						<flag value="BUILTIN|READONLY"/>
+						<flag value="BUILTIN|READONLY|LOCAL|VALUE_WORKSPACE_PATH"/>
 					</entry>
 					<entry kind="includePath" name="/${ProjName}/#undef __ARM_NEON_FP">
 						<flag value="BUILTIN|READONLY|VALUE_WORKSPACE_PATH"/>
 					</entry>
+					<entry kind="includePath" name="C:/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.15.0.201708311556/tools/compiler/arm-none-eabi/include/c++/6.3.1">
+						<flag value="BUILTIN|READONLY"/>
+					</entry>
+					<entry kind="includePath" name="C:/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.15.0.201708311556/tools/compiler/arm-none-eabi/include/c++/6.3.1/arm-none-eabi">
+						<flag value="BUILTIN|READONLY"/>
+					</entry>
+					<entry kind="includePath" name="C:/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.15.0.201708311556/tools/compiler/arm-none-eabi/include/c++/6.3.1/backward">
+						<flag value="BUILTIN|READONLY"/>
+					</entry>
+					<entry kind="includePath" name="C:/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.15.0.201708311556/tools/compiler/lib/gcc/arm-none-eabi/6.3.1/include">
+						<flag value="BUILTIN|READONLY"/>
+					</entry>
+					<entry kind="includePath" name="C:/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.15.0.201708311556/tools/compiler/lib/gcc/arm-none-eabi/6.3.1/include-fixed">
+						<flag value="BUILTIN|READONLY"/>
+					</entry>
+					<entry kind="includePath" name="/${ProjName}/#undef __ARM_ARCH_EXT_IDIV__">
+						<flag value="BUILTIN|READONLY|VALUE_WORKSPACE_PATH"/>
+					</entry>
 					<entry kind="includePath" name="C:/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.15.0.201708311556/tools/compiler/arm-none-eabi/include">
 						<flag value="BUILTIN|READONLY"/>
+					</entry>
+					<entry kind="includePath" name="/${ProjName}/#undef __ARM_FEATURE_IDIV">
+						<flag value="BUILTIN|READONLY|VALUE_WORKSPACE_PATH"/>
 					</entry>
 					<entry kind="macro" name="__ACCUM_EPSILON__" value="0x1P-15K">
 						<flag value="BUILTIN|READONLY"/>
@@ -2233,7 +2230,7 @@
 			</provider>
 		</extension>
 	</configuration>
-	<configuration id="fr.ac6.managedbuild.config.gnu.cross.exe.release.690353992" name="Release">
+	<configuration id="fr.ac6.managedbuild.config.gnu.cross.exe.release.1324163563" name="Release">
 		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
 			<provider id="fr.ac6.mcu.ide.build.CrossBuiltinSpecsDetector">
 				<language id="org.eclipse.cdt.core.gcc">
@@ -3289,11 +3286,11 @@
 					<entry kind="includePath" name="C:/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.15.0.201708311556/tools/compiler/arm-none-eabi/include/c++/6.3.1">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
-					<entry kind="includePath" name="C:/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.15.0.201708311556/tools/compiler/arm-none-eabi/include/c++/6.3.1/arm-none-eabi">
-						<flag value="BUILTIN|READONLY"/>
-					</entry>
 					<entry kind="includePath" name="/${ProjName}/#undef __ARM_NEON__">
 						<flag value="BUILTIN|READONLY|VALUE_WORKSPACE_PATH"/>
+					</entry>
+					<entry kind="includePath" name="C:/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.15.0.201708311556/tools/compiler/arm-none-eabi/include/c++/6.3.1/arm-none-eabi">
+						<flag value="BUILTIN|READONLY"/>
 					</entry>
 					<entry kind="includePath" name="/${ProjName}/#undef __ARM_NEON">
 						<flag value="BUILTIN|READONLY|VALUE_WORKSPACE_PATH"/>
@@ -3304,11 +3301,20 @@
 					<entry kind="includePath" name="C:/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.15.0.201708311556/tools/compiler/arm-none-eabi/include/c++/6.3.1/backward">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
+					<entry kind="includePath" name="/${ProjName}/#undef __ARM_ARCH_EXT_IDIV__">
+						<flag value="BUILTIN|READONLY|VALUE_WORKSPACE_PATH"/>
+					</entry>
 					<entry kind="includePath" name="C:/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.15.0.201708311556/tools/compiler/lib/gcc/arm-none-eabi/6.3.1/include">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
+					<entry kind="includePath" name="/${ProjName}/#undef __ARM_FEATURE_IDIV">
+						<flag value="BUILTIN|READONLY|VALUE_WORKSPACE_PATH"/>
+					</entry>
 					<entry kind="includePath" name="C:/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.15.0.201708311556/tools/compiler/lib/gcc/arm-none-eabi/6.3.1/include-fixed">
 						<flag value="BUILTIN|READONLY"/>
+					</entry>
+					<entry kind="includePath" name="/${ProjName}/#undef __ARM_ASM_SYNTAX_UNIFIED__">
+						<flag value="BUILTIN|READONLY|VALUE_WORKSPACE_PATH"/>
 					</entry>
 					<entry kind="includePath" name="C:/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.15.0.201708311556/tools/compiler/arm-none-eabi/include">
 						<flag value="BUILTIN|READONLY"/>
