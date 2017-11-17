@@ -1,0 +1,17 @@
+15:07:52 **** Incremental Build of configuration Debug for project Lab5 ****
+make all 
+Building target: Lab5.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\Max\Desktop\github\MCSL\Lab5\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab5.elf" @"objects.list"   -lm
+src/main5.2.o: In function `main':
+C:\Users\Max\Desktop\github\MCSL\Lab5\Debug/../src/main5.2.s:29: multiple definition of `main'
+src/main5.1.o:C:\Users\Max\Desktop\github\MCSL\Lab5\Debug/../src/main5.1.s:29: first defined here
+src/main5.3.o: In function `main':
+C:\Users\Max\Desktop\github\MCSL\Lab5\Debug/../src/main5.3.s:31: multiple definition of `main'
+src/main5.1.o:C:\Users\Max\Desktop\github\MCSL\Lab5\Debug/../src/main5.1.s:29: first defined here
+collect2.exe: error: ld returned 1 exit status
+makefile:34: recipe for target 'Lab5.elf' failed
+make: *** [Lab5.elf] Error 1
+
+15:07:52 Build Finished (took 315ms)
+

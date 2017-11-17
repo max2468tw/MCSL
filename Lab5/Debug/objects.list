@@ -1,0 +1,5 @@
+"src/main5.1.o"
+"src/main5.2.o"
+"src/main5.3.o"
+"startup/startup_stm32.o"
+"startup/sysmem.o"

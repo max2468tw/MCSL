@@ -1,0 +1,13 @@
+15:07:51 **** Incremental Build of configuration Debug for project Lab4 ****
+make all 
+Building target: Lab4.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\Max\Desktop\github\MCSL\Lab4\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab4.elf" @"objects.list"   -lm
+startup/startup_stm32.o: In function `LoopFillZerobss':
+C:\Users\Max\Desktop\github\MCSL\Lab4\Debug/../startup/startup_stm32.s:78: undefined reference to `main'
+collect2.exe: error: ld returned 1 exit status
+makefile:34: recipe for target 'Lab4.elf' failed
+make: *** [Lab4.elf] Error 1
+
+15:07:51 Build Finished (took 408ms)
+

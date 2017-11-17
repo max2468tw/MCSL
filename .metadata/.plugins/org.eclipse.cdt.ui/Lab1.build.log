@@ -1,29 +1,17 @@
-21:20:59 **** Incremental Build of configuration Debug for project Lab1 ****
+15:07:49 **** Incremental Build of configuration Debug for project Lab1 ****
 make all 
-Building file: ../src/main2.2.s
-Invoking: MCU GCC Assembler
-C:\Users\Max\Desktop\github\MCSL\Lab1\Debug
-arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -g -o "src/main2.2.o" "../src/main2.2.s"
-Finished building: ../src/main2.2.s
- 
-Building file: ../src/main2.3.s
-Invoking: MCU GCC Assembler
-C:\Users\Max\Desktop\github\MCSL\Lab1\Debug
-arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -g -o "src/main2.3.o" "../src/main2.3.s"
-Finished building: ../src/main2.3.s
- 
 Building target: Lab1.elf
 Invoking: MCU GCC Linker
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\Max\Desktop\github\MCSL\Lab1\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab1.elf" @"objects.list"   -lm
-Finished building target: Lab1.elf
- 
-make --no-print-directory post-build
-Generating binary and Printing size information:
-arm-none-eabi-objcopy -O binary "Lab1.elf" "Lab1.bin"
-arm-none-eabi-size "Lab1.elf"
-   text	   data	    bss	    dec	    hex	filename
-   1008	   1096	   1092	   3196	    c7c	Lab1.elf
- 
+src/main1.2.o: In function `main':
+C:\Users\Max\Desktop\github\MCSL\Lab1\Debug/../src/main1.2.s:14: multiple definition of `main'
+src/main1.1.o:C:\Users\Max\Desktop\github\MCSL\Lab1\Debug/../src/main1.1.s:10: first defined here
+src/main1.3.o: In function `main':
+C:\Users\Max\Desktop\github\MCSL\Lab1\Debug/../src/main1.3.s:14: multiple definition of `main'
+src/main1.1.o:C:\Users\Max\Desktop\github\MCSL\Lab1\Debug/../src/main1.1.s:10: first defined here
+collect2.exe: error: ld returned 1 exit status
+makefile:34: recipe for target 'Lab1.elf' failed
+make: *** [Lab1.elf] Error 1
 
-21:21:00 Build Finished (took 745ms)
+15:07:49 Build Finished (took 566ms)
 
