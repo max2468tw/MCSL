@@ -7,7 +7,7 @@
 	str: .ascii "Hello World!"
 
 .text
-	.global main
+	//.global main
 	.equ AA, 0x55
 
 main:

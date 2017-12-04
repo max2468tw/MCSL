@@ -1,0 +1,21 @@
+#include "stm32l476xx.h"
+extern void GPIO_init();
+void GPIO_init_AF(){
+	//TODO: Initial GPIO pin as alternate function for buzzer. You can choose to use C or assembly to finish this function.
+}
+s
+void Timer_init(){
+	//TODO: Initialize timer
+}
+
+void PWM_channel_init(){
+//TODO: Initialize timer PWM channel
+}
+
+int ain(){
+	GPIO_init();
+	GPIO_init_AF();
+	Timer_init();
+	PWM_channel_init();
+/	/TODO: Scan the keypad and use PWM to send the corresponding frequency square wave to buzzer.
+}

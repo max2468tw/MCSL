@@ -1,17 +1,47 @@
-15:07:52 **** Incremental Build of configuration Debug for project Lab5 ****
+05:13:17 **** Incremental Build of configuration Debug for project Lab5 ****
 make all 
+Building file: ../startup/startup_stm32.s
+Invoking: MCU GCC Assembler
+C:\Users\maxch\OneDrive\Desktop\MCSL\Lab5\Debug
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -g -o "startup/startup_stm32.o" "../startup/startup_stm32.s"
+Finished building: ../startup/startup_stm32.s
+ 
+Building file: ../startup/sysmem.c
+Invoking: MCU GCC Compiler
+C:\Users\maxch\OneDrive\Desktop\MCSL\Lab5\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32L4 -DSTM32L476RGTx -DNUCLEO_L476RG -DDEBUG -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"startup/sysmem.d" -MT"startup/sysmem.o" -o "startup/sysmem.o" "../startup/sysmem.c"
+Finished building: ../startup/sysmem.c
+ 
+Building file: ../src/main5.1.s
+Invoking: MCU GCC Assembler
+C:\Users\maxch\OneDrive\Desktop\MCSL\Lab5\Debug
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -g -o "src/main5.1.o" "../src/main5.1.s"
+Finished building: ../src/main5.1.s
+ 
+Building file: ../src/main5.2.s
+Invoking: MCU GCC Assembler
+C:\Users\maxch\OneDrive\Desktop\MCSL\Lab5\Debug
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -g -o "src/main5.2.o" "../src/main5.2.s"
+Finished building: ../src/main5.2.s
+ 
+Building file: ../src/main5.3.s
+Invoking: MCU GCC Assembler
+C:\Users\maxch\OneDrive\Desktop\MCSL\Lab5\Debug
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -g -o "src/main5.3.o" "../src/main5.3.s"
+Finished building: ../src/main5.3.s
+ 
 Building target: Lab5.elf
 Invoking: MCU GCC Linker
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\Max\Desktop\github\MCSL\Lab5\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab5.elf" @"objects.list"   -lm
-src/main5.2.o: In function `main':
-C:\Users\Max\Desktop\github\MCSL\Lab5\Debug/../src/main5.2.s:29: multiple definition of `main'
-src/main5.1.o:C:\Users\Max\Desktop\github\MCSL\Lab5\Debug/../src/main5.1.s:29: first defined here
-src/main5.3.o: In function `main':
-C:\Users\Max\Desktop\github\MCSL\Lab5\Debug/../src/main5.3.s:31: multiple definition of `main'
-src/main5.1.o:C:\Users\Max\Desktop\github\MCSL\Lab5\Debug/../src/main5.1.s:29: first defined here
-collect2.exe: error: ld returned 1 exit status
-makefile:34: recipe for target 'Lab5.elf' failed
-make: *** [Lab5.elf] Error 1
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\maxch\OneDrive\Desktop\MCSL\Lab5\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab5.elf" @"objects.list"   -lm
+Finished building target: Lab5.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "Lab5.elf" "Lab5.bin"
+arm-none-eabi-size "Lab5.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1232	   1096	   1092	   3420	    d5c	Lab5.elf
+ 
 
-15:07:52 Build Finished (took 315ms)
+05:13:18 Build Finished (took 1s.111ms)
 

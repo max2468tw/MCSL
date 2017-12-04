@@ -1,130 +1,138 @@
-15:07:36 **** Incremental Build of configuration Debug for project Midterm ****
+20:25:06 **** Incremental Build of configuration Debug for project Lab7 ****
 make all 
-Building file: ../src/main.s
-Invoking: MCU GCC Assembler
-C:\Users\Max\Desktop\github\MCSL\Midterm\Debug
-arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -g -o "src/main.o" "../src/main.s"
-Finished building: ../src/main.s
+Building file: ../src/main7.1.c
+Invoking: MCU GCC Compiler
+C:\Users\maxch\OneDrive\Desktop\MCSL\Lab7\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32L4 -DSTM32L476RGTx -DNUCLEO_L476RG -DDEBUG -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main7.1.d" -MT"src/main7.1.o" -o "src/main7.1.o" "../src/main7.1.c"
+../src/main7.1.c: In function 'set_HCLK':
+../src/main7.1.c:62:2: error: duplicate case value
+  case 6:
+  ^~~~
+../src/main7.1.c:54:2: error: previously used here
+  case 6:
+  ^~~~
+make: *** [src/main7.1.o] Error 1
+src/subdir.mk:28: recipe for target 'src/main7.1.o' failed
+20:25:25 **** Incremental Build of configuration Debug for project Lab7 ****
+make all 
+Building file: ../src/main7.1.c
+Invoking: MCU GCC Compiler
+C:\Users\maxch\OneDrive\Desktop\MCSL\Lab7\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32L4 -DSTM32L476RGTx -DNUCLEO_L476RG -DDEBUG -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main7.1.d" -MT"src/main7.1.o" -o "src/main7.1.o" "../src/main7.1.c"
+Finished building: ../src/main7.1.c
  
-Building target: Midterm.elf
+Building target: Lab7.elf
 Invoking: MCU GCC Linker
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\Max\Desktop\github\MCSL\Midterm\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Midterm.elf" @"objects.list"   -lm
-Finished building target: Midterm.elf
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\maxch\OneDrive\Desktop\MCSL\Lab7\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab7.elf" @"objects.list"   -lm
+Finished building target: Lab7.elf
  
 make --no-print-directory post-build
 Generating binary and Printing size information:
-arm-none-eabi-objcopy -O binary "Midterm.elf" "Midterm.bin"
-arm-none-eabi-size "Midterm.elf"
+arm-none-eabi-objcopy -O binary "Lab7.elf" "Lab7.bin"
+arm-none-eabi-size "Lab7.elf"
    text	   data	    bss	    dec	    hex	filename
-   1792	   1216	   1092	   4100	   1004	Midterm.elf
+   1864	   1080	   1092	   4036	    fc4	Lab7.elf
  
-15:07:49 **** Incremental Build of configuration Debug for project Lab1 ****
+20:26:05 **** Incremental Build of configuration Debug for project Lab7 ****
 make all 
-Building target: Lab1.elf
+Building file: ../src/main7.1.c
+Invoking: MCU GCC Compiler
+C:\Users\maxch\OneDrive\Desktop\MCSL\Lab7\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32L4 -DSTM32L476RGTx -DNUCLEO_L476RG -DDEBUG -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main7.1.d" -MT"src/main7.1.o" -o "src/main7.1.o" "../src/main7.1.c"
+Finished building: ../src/main7.1.c
+ 
+Building target: Lab7.elf
 Invoking: MCU GCC Linker
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\Max\Desktop\github\MCSL\Lab1\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab1.elf" @"objects.list"   -lm
-src/main1.2.o: In function `main':
-C:\Users\Max\Desktop\github\MCSL\Lab1\Debug/../src/main1.2.s:14: multiple definition of `main'
-src/main1.1.o:C:\Users\Max\Desktop\github\MCSL\Lab1\Debug/../src/main1.1.s:10: first defined here
-src/main1.3.o: In function `main':
-C:\Users\Max\Desktop\github\MCSL\Lab1\Debug/../src/main1.3.s:14: multiple definition of `main'
-src/main1.1.o:C:\Users\Max\Desktop\github\MCSL\Lab1\Debug/../src/main1.1.s:10: first defined here
-collect2.exe: error: ld returned 1 exit status
-makefile:34: recipe for target 'Lab1.elf' failed
-make: *** [Lab1.elf] Error 1
-15:07:50 **** Incremental Build of configuration Debug for project Lab2 ****
-make all 
-Building target: Lab2.elf
-Invoking: MCU GCC Linker
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\Max\Desktop\github\MCSL\Lab2\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab2.elf" @"objects.list"   -lm
-src/main2.2.o: In function `main':
-C:\Users\Max\Desktop\github\MCSL\Lab2\Debug/../src/main2.2.s:63: multiple definition of `main'
-src/main2.1.o:C:\Users\Max\Desktop\github\MCSL\Lab2\Debug/../src/main2.1.s:28: first defined here
-src/main2.3.o: In function `main':
-C:\Users\Max\Desktop\github\MCSL\Lab2\Debug/../src/main2.3.s:41: multiple definition of `main'
-src/main2.1.o:C:\Users\Max\Desktop\github\MCSL\Lab2\Debug/../src/main2.1.s:28: first defined here
-src/main2.4.1.o: In function `main':
-C:\Users\Max\Desktop\github\MCSL\Lab2\Debug/../src/main2.4.1.s:25: multiple definition of `main'
-src/main2.1.o:C:\Users\Max\Desktop\github\MCSL\Lab2\Debug/../src/main2.1.s:28: first defined here
-src/main2.4.2.o: In function `main':
-C:\Users\Max\Desktop\github\MCSL\Lab2\Debug/../src/main2.4.2.s:63: multiple definition of `main'
-src/main2.1.o:C:\Users\Max\Desktop\github\MCSL\Lab2\Debug/../src/main2.1.s:28: first defined here
-collect2.exe: error: ld returned 1 exit status
-makefile:34: recipe for target 'Lab2.elf' failed
-make: *** [Lab2.elf] Error 1
-15:07:50 **** Incremental Build of configuration Debug for project Lab3 ****
-make all 
-Building target: Lab3.elf
-Invoking: MCU GCC Linker
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\Max\Desktop\github\MCSL\Lab3\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab3.elf" @"objects.list"   -lm
-src/main3.2.o: In function `main':
-C:\Users\Max\Desktop\github\MCSL\Lab3\Debug/../src/main3.2.s:15: multiple definition of `main'
-src/main3.1.o:C:\Users\Max\Desktop\github\MCSL\Lab3\Debug/../src/main3.1.s:15: first defined here
-collect2.exe: error: ld returned 1 exit status
-makefile:34: recipe for target 'Lab3.elf' failed
-make: *** [Lab3.elf] Error 1
-15:07:51 **** Incremental Build of configuration Debug for project Lab4 ****
-make all 
-Building target: Lab4.elf
-Invoking: MCU GCC Linker
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\Max\Desktop\github\MCSL\Lab4\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab4.elf" @"objects.list"   -lm
-startup/startup_stm32.o: In function `LoopFillZerobss':
-C:\Users\Max\Desktop\github\MCSL\Lab4\Debug/../startup/startup_stm32.s:78: undefined reference to `main'
-collect2.exe: error: ld returned 1 exit status
-makefile:34: recipe for target 'Lab4.elf' failed
-make: *** [Lab4.elf] Error 1
-15:07:52 **** Incremental Build of configuration Debug for project Lab5 ****
-make all 
-Building target: Lab5.elf
-Invoking: MCU GCC Linker
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\Max\Desktop\github\MCSL\Lab5\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab5.elf" @"objects.list"   -lm
-src/main5.2.o: In function `main':
-C:\Users\Max\Desktop\github\MCSL\Lab5\Debug/../src/main5.2.s:29: multiple definition of `main'
-src/main5.1.o:C:\Users\Max\Desktop\github\MCSL\Lab5\Debug/../src/main5.1.s:29: first defined here
-src/main5.3.o: In function `main':
-C:\Users\Max\Desktop\github\MCSL\Lab5\Debug/../src/main5.3.s:31: multiple definition of `main'
-src/main5.1.o:C:\Users\Max\Desktop\github\MCSL\Lab5\Debug/../src/main5.1.s:29: first defined here
-collect2.exe: error: ld returned 1 exit status
-makefile:34: recipe for target 'Lab5.elf' failed
-make: *** [Lab5.elf] Error 1
-15:07:52 **** Incremental Build of configuration Debug for project Lab6 ****
-make all 
-Building target: Lab6.elf
-Invoking: MCU GCC Linker
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\Max\Desktop\github\MCSL\Lab6\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab6.elf" @"objects.list"   -lm
-src/main6.1.o: In function `display':
-C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.1.c:90: multiple definition of `display'
-src/main6.0.o:C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.0.c:15: first defined here
-src/main6.1.o: In function `keypad_init':
-C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.1.c:20: multiple definition of `main'
-src/main6.0.o:C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.0.c:15: first defined here
-src/main6.2.o: In function `keypad_init':
-C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.2.c:20: multiple definition of `keypad_init'
-src/main6.1.o:C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.1.c:20: first defined here
-src/main6.2.o: In function `keypad_init':
-C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.2.c:20: multiple definition of `keypad_scan'
-src/main6.1.o:C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.1.c:20: first defined here
-src/main6.2.o: In function `keypad_init':
-C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.2.c:20: multiple definition of `display'
-src/main6.0.o:C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.0.c:15: first defined here
-src/main6.2.o: In function `keypad_init':
-C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.2.c:20: multiple definition of `main'
-src/main6.0.o:C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.0.c:15: first defined here
-src/main6.3.o: In function `keypad_init':
-C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.3.c:21: multiple definition of `keypad_init'
-src/main6.1.o:C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.1.c:20: first defined here
-src/main6.3.o: In function `keypad_init':
-C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.3.c:21: multiple definition of `display'
-src/main6.0.o:C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.0.c:15: first defined here
-src/main6.3.o: In function `keypad_init':
-C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.3.c:21: multiple definition of `keypad_scan'
-src/main6.1.o:C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.1.c:20: first defined here
-src/main6.3.o: In function `keypad_init':
-C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.3.c:21: multiple definition of `main'
-src/main6.0.o:C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.0.c:15: first defined here
-collect2.exe: error: ld returned 1 exit status
-makefile:34: recipe for target 'Lab6.elf' failed
-make: *** [Lab6.elf] Error 1
-15:07:53 **** Incremental Build of configuration Debug for project Midterm ****
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\maxch\OneDrive\Desktop\MCSL\Lab7\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab7.elf" @"objects.list"   -lm
+Finished building target: Lab7.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "Lab7.elf" "Lab7.bin"
+arm-none-eabi-size "Lab7.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1872	   1080	   1092	   4044	    fcc	Lab7.elf
+ 
+20:27:15 **** Incremental Build of configuration Debug for project Lab7 ****
 make all 
 make: Nothing to be done for 'all'.
+20:29:50 **** Incremental Build of configuration Debug for project Lab7 ****
+make all 
+Building file: ../src/main7.1.c
+Invoking: MCU GCC Compiler
+C:\Users\maxch\OneDrive\Desktop\MCSL\Lab7\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32L4 -DSTM32L476RGTx -DNUCLEO_L476RG -DDEBUG -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main7.1.d" -MT"src/main7.1.o" -o "src/main7.1.o" "../src/main7.1.c"
+Finished building: ../src/main7.1.c
+ 
+Building target: Lab7.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\maxch\OneDrive\Desktop\MCSL\Lab7\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab7.elf" @"objects.list"   -lm
+Finished building target: Lab7.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "Lab7.elf" "Lab7.bin"
+arm-none-eabi-size "Lab7.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1884	   1080	   1092	   4056	    fd8	Lab7.elf
+ 
+20:33:01 **** Incremental Build of configuration Debug for project Lab7 ****
+make all 
+Building file: ../src/main7.3.c
+Invoking: MCU GCC Compiler
+C:\Users\maxch\OneDrive\Desktop\MCSL\Lab7\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32L4 -DSTM32L476RGTx -DNUCLEO_L476RG -DDEBUG -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main7.3.d" -MT"src/main7.3.o" -o "src/main7.3.o" "../src/main7.3.c"
+Finished building: ../src/main7.3.c
+ 
+Building target: Lab7.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\maxch\OneDrive\Desktop\MCSL\Lab7\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab7.elf" @"objects.list"   -lm
+Finished building target: Lab7.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "Lab7.elf" "Lab7.bin"
+arm-none-eabi-size "Lab7.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3648	   1080	   1092	   5820	   16bc	Lab7.elf
+ 
+20:35:00 **** Incremental Build of configuration Debug for project Lab7 ****
+make all 
+Building file: ../src/main7.3.c
+Invoking: MCU GCC Compiler
+C:\Users\maxch\OneDrive\Desktop\MCSL\Lab7\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32L4 -DSTM32L476RGTx -DNUCLEO_L476RG -DDEBUG -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main7.3.d" -MT"src/main7.3.o" -o "src/main7.3.o" "../src/main7.3.c"
+Finished building: ../src/main7.3.c
+ 
+Building target: Lab7.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\maxch\OneDrive\Desktop\MCSL\Lab7\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab7.elf" @"objects.list"   -lm
+Finished building target: Lab7.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "Lab7.elf" "Lab7.bin"
+arm-none-eabi-size "Lab7.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3652	   1080	   1092	   5824	   16c0	Lab7.elf
+ 
+20:35:35 **** Incremental Build of configuration Debug for project Lab7 ****
+make all 
+Building file: ../src/main7.3.c
+Invoking: MCU GCC Compiler
+C:\Users\maxch\OneDrive\Desktop\MCSL\Lab7\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32L4 -DSTM32L476RGTx -DNUCLEO_L476RG -DDEBUG -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main7.3.d" -MT"src/main7.3.o" -o "src/main7.3.o" "../src/main7.3.c"
+Finished building: ../src/main7.3.c
+ 
+Building target: Lab7.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\maxch\OneDrive\Desktop\MCSL\Lab7\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab7.elf" @"objects.list"   -lm
+Finished building target: Lab7.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "Lab7.elf" "Lab7.bin"
+arm-none-eabi-size "Lab7.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3656	   1080	   1092	   5828	   16c4	Lab7.elf
+ 

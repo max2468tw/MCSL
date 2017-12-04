@@ -1,41 +1,17 @@
-15:07:52 **** Incremental Build of configuration Debug for project Lab6 ****
+05:17:06 **** Incremental Build of configuration Debug for project Lab6 ****
 make all 
 Building target: Lab6.elf
 Invoking: MCU GCC Linker
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\Max\Desktop\github\MCSL\Lab6\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab6.elf" @"objects.list"   -lm
-src/main6.1.o: In function `display':
-C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.1.c:90: multiple definition of `display'
-src/main6.0.o:C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.0.c:15: first defined here
-src/main6.1.o: In function `keypad_init':
-C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.1.c:20: multiple definition of `main'
-src/main6.0.o:C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.0.c:15: first defined here
-src/main6.2.o: In function `keypad_init':
-C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.2.c:20: multiple definition of `keypad_init'
-src/main6.1.o:C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.1.c:20: first defined here
-src/main6.2.o: In function `keypad_init':
-C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.2.c:20: multiple definition of `keypad_scan'
-src/main6.1.o:C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.1.c:20: first defined here
-src/main6.2.o: In function `keypad_init':
-C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.2.c:20: multiple definition of `display'
-src/main6.0.o:C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.0.c:15: first defined here
-src/main6.2.o: In function `keypad_init':
-C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.2.c:20: multiple definition of `main'
-src/main6.0.o:C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.0.c:15: first defined here
-src/main6.3.o: In function `keypad_init':
-C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.3.c:21: multiple definition of `keypad_init'
-src/main6.1.o:C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.1.c:20: first defined here
-src/main6.3.o: In function `keypad_init':
-C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.3.c:21: multiple definition of `display'
-src/main6.0.o:C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.0.c:15: first defined here
-src/main6.3.o: In function `keypad_init':
-C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.3.c:21: multiple definition of `keypad_scan'
-src/main6.1.o:C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.1.c:20: first defined here
-src/main6.3.o: In function `keypad_init':
-C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.3.c:21: multiple definition of `main'
-src/main6.0.o:C:\Users\Max\Desktop\github\MCSL\Lab6\Debug/../src/main6.0.c:15: first defined here
-collect2.exe: error: ld returned 1 exit status
-makefile:34: recipe for target 'Lab6.elf' failed
-make: *** [Lab6.elf] Error 1
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\maxch\OneDrive\Desktop\MCSL\Lab6\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab6.elf" @"objects.list"   -lm
+Finished building target: Lab6.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "Lab6.elf" "Lab6.bin"
+arm-none-eabi-size "Lab6.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1420	   1080	   1092	   3592	    e08	Lab6.elf
+ 
 
-15:07:52 Build Finished (took 401ms)
+05:17:07 Build Finished (took 488ms)
 

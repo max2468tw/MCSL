@@ -3,7 +3,7 @@
 	.thumb
 
 .text
-    .global main
+    //.global main
 	.equ N, 30
 
 fib:

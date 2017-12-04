@@ -7,7 +7,7 @@
 	max_size:  .word  0
 
 .text
-	.global main
+	//.global main
 	m: .word  0x5E
 	n: .word  0x60
 

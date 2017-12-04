@@ -60,7 +60,7 @@ Discarded input sections
  .data          0x00000000        0x7 src/main5.2.o
  .bss           0x00000000        0x0 src/main5.2.o
  .debug_line    0x00000000       0x92 src/main5.2.o
- .debug_info    0x00000000       0x65 src/main5.2.o
+ .debug_info    0x00000000       0x69 src/main5.2.o
  .debug_abbrev  0x00000000       0x14 src/main5.2.o
  .debug_aranges
                 0x00000000       0x20 src/main5.2.o
@@ -70,7 +70,7 @@ Discarded input sections
  .data          0x00000000        0x1 src/main5.3.o
  .bss           0x00000000        0x0 src/main5.3.o
  .debug_line    0x00000000      0x153 src/main5.3.o
- .debug_info    0x00000000       0x65 src/main5.3.o
+ .debug_info    0x00000000       0x69 src/main5.3.o
  .debug_abbrev  0x00000000       0x14 src/main5.3.o
  .debug_aranges
                 0x00000000       0x20 src/main5.3.o
@@ -148,7 +148,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 startup/sysmem.o
  .debug_macro   0x00000000      0x18b startup/sysmem.o
  .debug_line    0x00000000      0x3db startup/sysmem.o
- .debug_str     0x00000000     0x6fd6 startup/sysmem.o
+ .debug_str     0x00000000     0x6fda startup/sysmem.o
  .comment       0x00000000       0x80 startup/sysmem.o
  .debug_frame   0x00000000       0x34 startup/sysmem.o
  .ARM.attributes
@@ -473,9 +473,9 @@ OUTPUT(Lab5.elf elf32-littlearm)
  .debug_line    0x00000000       0x95 src/main5.1.o
  .debug_line    0x00000095       0x79 startup/startup_stm32.o
 
-.debug_info     0x00000000       0xd0
- .debug_info    0x00000000       0x65 src/main5.1.o
- .debug_info    0x00000065       0x6b startup/startup_stm32.o
+.debug_info     0x00000000       0xd8
+ .debug_info    0x00000000       0x69 src/main5.1.o
+ .debug_info    0x00000069       0x6f startup/startup_stm32.o
 
 .debug_abbrev   0x00000000       0x26
  .debug_abbrev  0x00000000       0x14 src/main5.1.o

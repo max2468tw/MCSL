@@ -8,7 +8,7 @@
 	z: .word 20
 
 .text
-	.global main
+	//.global main
 
 enable_fpu:
   	//Your code start from here

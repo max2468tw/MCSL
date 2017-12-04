@@ -3,7 +3,7 @@
 	.thumb
 
 .text
-	.global main
+	//.global main
 	.equ RCC_BASE,0x40021000
 	.equ RCC_CR,0x0
 	.equ RCC_CFGR,0x08

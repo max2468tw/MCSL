@@ -8,7 +8,7 @@
 	Z: .word 0
 
 .text
-	.global main
+	//.global main
 
 main:
 	ldr r2, =X

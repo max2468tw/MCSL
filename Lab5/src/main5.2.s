@@ -6,7 +6,7 @@
 	student_id: .byte 0, 4, 1, 0, 0, 0, 1 //TODO: put your student id here
 
 .text
-	.global main
+	//.global main
 	.equ RCC_AHB2ENR, 0x4002104C
 	.equ GPIOA_BASE, 0x48000000
 	.equ GPIO_BSRR_OFFSET, 0x18

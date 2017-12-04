@@ -1,0 +1,11 @@
+void allhigh (void);
+void keypad_init (void);
+int keypad_scan (void);
+int row4 (void);
+int row3 (void);
+int row2 (void);
+int row1 (void);
+void col4 (int val);
+void col3 (int val);
+void col2 (int val);
+void col1 (int val);

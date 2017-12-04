@@ -1,13 +1,31 @@
-15:07:51 **** Incremental Build of configuration Debug for project Lab4 ****
+05:14:17 **** Incremental Build of configuration Debug for project Lab4 ****
 make all 
+Building file: ../startup/startup_stm32.s
+Invoking: MCU GCC Assembler
+C:\Users\maxch\OneDrive\Desktop\MCSL\Lab4\Debug
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -g -o "startup/startup_stm32.o" "../startup/startup_stm32.s"
+Finished building: ../startup/startup_stm32.s
+ 
+Building file: ../startup/sysmem.c
+Invoking: MCU GCC Compiler
+C:\Users\maxch\OneDrive\Desktop\MCSL\Lab4\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32L4 -DSTM32L476RGTx -DNUCLEO_L476RG -DDEBUG -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"startup/sysmem.d" -MT"startup/sysmem.o" -o "startup/sysmem.o" "../startup/sysmem.c"
+Finished building: ../startup/sysmem.c
+ 
+Building file: ../src/main4.1.s
+Invoking: MCU GCC Assembler
+C:\Users\maxch\OneDrive\Desktop\MCSL\Lab4\Debug
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -g -o "src/main4.1.o" "../src/main4.1.s"
+Finished building: ../src/main4.1.s
+ 
 Building target: Lab4.elf
 Invoking: MCU GCC Linker
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\Max\Desktop\github\MCSL\Lab4\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab4.elf" @"objects.list"   -lm
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\maxch\OneDrive\Desktop\MCSL\Lab4\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab4.elf" @"objects.list"   -lm
 startup/startup_stm32.o: In function `LoopFillZerobss':
-C:\Users\Max\Desktop\github\MCSL\Lab4\Debug/../startup/startup_stm32.s:78: undefined reference to `main'
+C:\Users\maxch\OneDrive\Desktop\MCSL\Lab4\Debug/../startup/startup_stm32.s:78: undefined reference to `main'
 collect2.exe: error: ld returned 1 exit status
 makefile:34: recipe for target 'Lab4.elf' failed
 make: *** [Lab4.elf] Error 1
 
-15:07:51 Build Finished (took 408ms)
+05:14:18 Build Finished (took 791ms)
 

@@ -1,0 +1,23 @@
+20:35:35 **** Incremental Build of configuration Debug for project Lab7 ****
+make all 
+Building file: ../src/main7.3.c
+Invoking: MCU GCC Compiler
+C:\Users\maxch\OneDrive\Desktop\MCSL\Lab7\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32L4 -DSTM32L476RGTx -DNUCLEO_L476RG -DDEBUG -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main7.3.d" -MT"src/main7.3.o" -o "src/main7.3.o" "../src/main7.3.c"
+Finished building: ../src/main7.3.c
+ 
+Building target: Lab7.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\maxch\OneDrive\Desktop\MCSL\Lab7\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab7.elf" @"objects.list"   -lm
+Finished building target: Lab7.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "Lab7.elf" "Lab7.bin"
+arm-none-eabi-size "Lab7.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3656	   1080	   1092	   5828	   16c4	Lab7.elf
+ 
+
+20:35:36 Build Finished (took 886ms)
+
