@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Move &apos;main1.2.s, main1.3.s&apos; to &apos;Lab1&apos;" description="Move 2 resources to &apos;Lab1&apos;" destination="/Lab1" element1="src/main1.2.s" element2="src/main1.3.s" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="2" stamp="1512653264760" updateReferences="true"/>&#x0A;&#x0A;</session>

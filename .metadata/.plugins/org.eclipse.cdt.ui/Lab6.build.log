@@ -1,17 +1,6 @@
-05:17:06 **** Incremental Build of configuration Debug for project Lab6 ****
+21:46:54 **** Incremental Build of configuration Debug for project Lab6 ****
 make all 
-Building target: Lab6.elf
-Invoking: MCU GCC Linker
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:\Users\maxch\OneDrive\Desktop\MCSL\Lab6\LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "Lab6.elf" @"objects.list"   -lm
-Finished building target: Lab6.elf
- 
-make --no-print-directory post-build
-Generating binary and Printing size information:
-arm-none-eabi-objcopy -O binary "Lab6.elf" "Lab6.bin"
-arm-none-eabi-size "Lab6.elf"
-   text	   data	    bss	    dec	    hex	filename
-   1420	   1080	   1092	   3592	    e08	Lab6.elf
- 
+make: Nothing to be done for 'all'.
 
-05:17:07 Build Finished (took 488ms)
+21:46:54 Build Finished (took 150ms)
 
