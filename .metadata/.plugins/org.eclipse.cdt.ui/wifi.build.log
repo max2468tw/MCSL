@@ -22,3 +22,6 @@ arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DS
 compilation terminated.
 make: *** [src/WiFiWebServer.o] Error 1
 src/subdir.mk:18: recipe for target 'src/WiFiWebServer.o' failed
+
+23:34:39 Build Finished (took 809ms)
+
